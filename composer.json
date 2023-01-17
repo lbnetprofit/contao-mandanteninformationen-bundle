@@ -1,0 +1,29 @@
+{
+    "name": "netprofit/contao-mandanteninformationen-bundle",
+    "type": "contao-bundle",
+    "require": {
+        "contao/core-bundle": "^4.13"
+    },
+    "autoload": {
+        "psr-4": {
+            "Netprofit\\ContaoMandanteninformationenBundle\\": "src/"
+        },
+        "classmap": [
+            "src/Resources/contao/"
+        ],
+        "exclude-from-classmap": [
+            "src/Resources/contao/dca/",
+            "src/Resources/contao/languages/",
+            "src/Resources/contao/templates/"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Lukas Bableck",
+            "email": "lukas.bableck@netprofit.de"
+        }
+    ],
+    "extra": {
+        "contao-manager-plugin": "Netprofit\\ContaoMandanteninformationenBundle\\ContaoManager\\Plugin"
+    }
+}

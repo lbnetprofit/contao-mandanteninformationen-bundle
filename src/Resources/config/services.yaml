@@ -1,0 +1,10 @@
+services:
+    _defaults:
+        autoconfigure: true
+    Netprofit\ContaoMandanteninformationenBundle\Controller\FrontendModule\MandanteninformationenController:
+        tags:
+            -
+                name: contao.frontend_module
+                category: miscellaneous
+                template: mod_mandanteninformationen
+                type: mandanteninformationen

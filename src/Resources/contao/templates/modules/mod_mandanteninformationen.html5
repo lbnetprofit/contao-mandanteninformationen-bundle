@@ -1,0 +1,36 @@
+<div class="<?=$this->class?>">
+	<div class="inside">
+		<?php
+		if($this->headline){
+			?>	
+			<div class="headline-container">
+				<<?=$this->hl?>><?=$this->headline?></<?=$this->hl?>>
+			</div>
+			<?php
+		}
+		?>
+		<div class="content-container">
+			<?php
+			foreach ($this->news as $news) {
+				?>
+				<div class="news">
+					<div class="title">
+						<h2><?=$news["ueberschrift"]?></h2>
+					</div>
+					<div class="date">
+						<?=$news["date"]?>
+					</div>
+					<div class="text">
+						<?=$news["text"]?>
+					</div>
+				</div>
+				<?php
+			}
+			?>
+			<?= $this->pagination ?>
+		</div>
+		<div class="branding-container">
+			<?=$this->branding?>
+		</div>
+	</div>
+</div>
