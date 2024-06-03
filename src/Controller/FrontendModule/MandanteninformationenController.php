@@ -28,9 +28,12 @@ class MandanteninformationenController extends AbstractFrontendModuleController{
 		}
 
 		$data = static::getMandanteninformationen();
-		$template->branding = str_replace('a target="_blank"', 'a target="_blank" rel="noopener"', $data['bereitgestellt'][0]);
+		$template->branding = "";
+		if(array_key_exists('bereitgestellt', $data)){
+			$template->branding = str_replace('a target="_blank"', 'a target="_blank" rel="noopener"', $data['bereitgestellt'][0]);
+		}
 
-		$intTotal = sizeof($data['news']);
+		$intTotal = sizeof($data['news']??[]);
 		if ($intTotal > 0){
 			$offset = 0;
 			$total = $intTotal - $offset;
@@ -80,10 +83,10 @@ class MandanteninformationenController extends AbstractFrontendModuleController{
 				die("Neither curl nor file_get_contents is available.");
 			}
 		}
-		
+
 		$data = str_replace('ï»¿', '', utf8_encode($data));
 		$data = json_decode($data, true);
-		
+
 		return $data;
 	}
 
