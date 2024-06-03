@@ -2,7 +2,7 @@
 	<div class="inside">
 		<?php
 		if($this->headline){
-			?>	
+			?>
 			<div class="headline-container">
 				<<?=$this->hl?>><?=$this->headline?></<?=$this->hl?>>
 			</div>
@@ -11,20 +11,22 @@
 		?>
 		<div class="content-container">
 			<?php
-			foreach ($this->news as $news) {
-				?>
-				<div class="news">
-					<div class="title">
-						<h2><?=$news["ueberschrift"]?></h2>
+			if(is_array($this->news)){
+				foreach ($this->news as $news) {
+					?>
+					<div class="news">
+						<div class="title">
+							<h2><?=$news["ueberschrift"]?></h2>
+						</div>
+						<div class="date">
+							<?=$news["date"]?>
+						</div>
+						<div class="text">
+							<?=$news["text"]?>
+						</div>
 					</div>
-					<div class="date">
-						<?=$news["date"]?>
-					</div>
-					<div class="text">
-						<?=$news["text"]?>
-					</div>
-				</div>
-				<?php
+					<?php
+				}
 			}
 			?>
 			<?= $this->pagination ?>
